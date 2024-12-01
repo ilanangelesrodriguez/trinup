@@ -118,7 +118,7 @@ export default function SocialFeed() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className="flex gap-8 overflow-x-auto"
+        className="flex flex-wrap gap-8 overflow-x-auto lg:flex-row lg:flex-nowrap flex-col"
       >
         {posts.map((post) => (
           <SocialPost key={post.id} post={post} />

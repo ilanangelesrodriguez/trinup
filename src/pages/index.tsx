@@ -5,6 +5,7 @@ import { Image } from "@nextui-org/image";
 import DefaultLayout from "@/layouts/default";
 import { Apple, Leaf, Heart } from 'lucide-react';
 import SocialFeed from '@/components/socialFeed';
+import ContactForm from '@/components/contactForm';
 
 export default function IndexPage() {
   const [isVisible, setIsVisible] = useState(false);
@@ -117,7 +118,49 @@ export default function IndexPage() {
         </motion.div>
       </section>
 
-      <SocialFeed />
+      <motion.section 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="flex flex-col items-center justify-center gap-8 py-12 md:py-16 px-4"
+      >
+        <motion.h1 
+          className="text-4xl md:text-5xl font-bold text-center text-trinup-dark"
+          initial={{ scale: 0.9 }}
+          animate={{ scale: 1 }}
+          transition={{ type: "spring", stiffness: 200, damping: 10 }}
+        >
+          Nuestro público
+        </motion.h1>
+        <SocialFeed />
+      </motion.section>
+
+      <motion.section 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="flex flex-col items-center justify-center gap-8 py-12 md:py-16 px-4"
+      >
+        <motion.h1 
+          className="text-4xl md:text-5xl font-bold text-center text-trinup-dark"
+          initial={{ scale: 0.9 }}
+          animate={{ scale: 1 }}
+          transition={{ type: "spring", stiffness: 200, damping: 10 }}
+        >
+          Ponte en Contacto
+        </motion.h1>
+        <motion.p 
+          className="text-xl text-center text-gray-600 max-w-3xl mb-8"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2, duration: 0.5 }}
+        >
+          ¿Tienes preguntas o comentarios? Estamos aquí para ayudarte. Completa el formulario a continuación y nos pondremos en contacto contigo lo antes posible.
+        </motion.p>
+        
+        <ContactForm />
+      </motion.section>
+
     </DefaultLayout>
   );
 }

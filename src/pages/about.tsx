@@ -16,11 +16,11 @@ interface TeamMember {
 
 const teamMembers: TeamMember[] = [
   {
-    name: "Ana García",
-    role: "Co-fundadora & CEO",
-    bio: "Apasionada por la nutrición y el bienestar, Ana lidera TrinUp con visión innovadora.",
-    linkedin: "https://linkedin.com/in/ana-garcia",
-    email: "ana@trinup.com"
+    name: "Astrid Ariana Verde López",
+    role: "Fundadora & CEO",
+    bio: "Apasionada por la nutrición y el bienestar, Astrid lidera TrinUp con visión innovadora.",
+    linkedin: "https://linkedin.com/in/",
+    email: "astrid@trinup.com"
   },
   {
     name: "Ilan Angeles Rodríguez",
@@ -30,11 +30,11 @@ const teamMembers: TeamMember[] = [
     email: "202014026@uns.edu.pe"
   },
   {
-    name: "Laura Martínez",
-    role: "Nutricionista Jefe",
-    bio: "Con años de experiencia, Laura diseña planes nutricionales personalizados y efectivos.",
-    linkedin: "https://linkedin.com/in/laura-martinez",
-    email: "laura@trinup.com"
+    name: "Katherine Lizeth López Areche",
+    role: "CMO",
+    bio: "Con años de experiencia, Katherine diseña planes nutricionales personalizados y efectivos.",
+    linkedin: "https://linkedin.com/in/",
+    email: "Katherine@trinup.com"
   },
   {
     name: "David Sánchez",
