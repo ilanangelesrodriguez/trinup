@@ -4,6 +4,7 @@ import { Button } from "@nextui-org/button";
 import { Image } from "@nextui-org/image";
 import DefaultLayout from "@/layouts/default";
 import { Apple, Leaf, Heart } from 'lucide-react';
+import SocialFeed from '@/components/socialFeed';
 
 export default function IndexPage() {
   const [isVisible, setIsVisible] = useState(false);
@@ -14,12 +15,12 @@ export default function IndexPage() {
 
   return (
     <DefaultLayout>
-      <section className="relative min-h-screen overflow-hidden">
+      <section className="relative min-h-screen overflow-hidden mt-5">
         {/* Fondo degradado adaptativo */}
-        <div className="absolute inset-0 bg-gradient-to-br from-trinup-light to-white dark:from-trinup-dark dark:to-gray-900 transition-colors duration-500" />
+        <div className="absolute inset-0 bg-gradient-to-br from-trinup-light to-white dark:from-trinup-dark dark:to-gray-900 transition-colors duration-500 rounded-lg" />
         
         {/* Contenido principal */}
-        <div className="relative z-10 flex flex-col lg:flex-row items-center justify-center px-12 py-4 lg:py-10">
+        <div className="relative z-10 flex flex-col lg:flex-row items-center justify-center px-12 pt-10 lg:pt-10 mb-5">
           {/* Columna de texto */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -54,14 +55,14 @@ export default function IndexPage() {
                 size="lg"
                 color="success"
                 variant="shadow"
-                className="bg-trinup-green text-white font-semibold hover:bg-trinup-green/80 transition-colors"
+                className="bg-trinup-green text-white hover:bg-trinup-green/80 transition-colors"
               >
                 Comienza Ahora
               </Button>
               <Button
                 size="lg"
                 variant="bordered"
-                className="border-trinup-green text-trinup-green font-semibold dark:text-trinup-yellow dark:border-trinup-yellow hover:bg-trinup-green/10 transition-colors"
+                className="border-trinup-green text-trinup-green dark:text-trinup-yellow dark:border-trinup-yellow hover:bg-trinup-green/10 transition-colors"
               >
                 Saber Más
               </Button>
@@ -92,29 +93,31 @@ export default function IndexPage() {
 
         {/* Sección de características */}
         <motion.div 
-          className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-4 py-6"
+          className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-4 pb-6"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 50 }}
           transition={{ delay: 1, duration: 0.8 }}
         >
           {[
             { icon: Apple, title: "Nutrición Personalizada", description: "Planes adaptados a tus necesidades" },
-            { icon: Leaf, title: "Vida Sostenible", description: "Aprende a vivir en armonía con el planeta" },
+            { icon: Leaf, title: "Vida Sostenible", description: "Aprende a vivir en armonía" },
             { icon: Heart, title: "Apoyo Profesional", description: "Expertos dedicados a tu bienestar" }
           ].map((item, index) => (
             <motion.div 
               key={index}
-              className="flex flex-col items-center p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg"
+              className="flex flex-col items-center py-6 px-2 bg-white dark:bg-gray-800 rounded-lg shadow-lg"
               whileHover={{ scale: 1.05, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" }}
               whileTap={{ scale: 0.95 }}
             >
               <item.icon className="w-12 h-12 text-trinup-green mb-4" />
-              <h3 className="text-xl font-semibold mb-2 text-trinup-dark dark:text-white">{item.title}</h3>
+              <h3 className="text-xl mb-2 text-trinup-dark dark:text-white">{item.title}</h3>
               <p className="text-center text-gray-600 dark:text-gray-300">{item.description}</p>
             </motion.div>
           ))}
         </motion.div>
       </section>
+
+      <SocialFeed />
     </DefaultLayout>
   );
 }
