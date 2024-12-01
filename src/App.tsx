@@ -5,6 +5,7 @@ import PricingPage from "@/pages/pricing";
 import BlogPage from "@/pages/blog";
 import AboutPage from "@/pages/about";
 import NotFoundPage from "@/pages/notFound";
+import LoginPage from "@/pages/login";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Route element={<PricingPage />} path="/precios" />
       <Route element={<BlogPage />} path="/blog" />
       <Route element={<AboutPage />} path="/nosotros" />
+      <Route element={<LoginPage />} path="/login" />
       <Route element={<NotFoundPage />} path="*" />
     </Routes>
   );

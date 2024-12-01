@@ -31,7 +31,7 @@ const users = [
 export default function BlogPage() {
   return (
     <DefaultLayout>
-      <section className="flex flex-col items-center justify-center gap-4 pb-8 md:pb-10 min-h-screen">
+      <section className="flex flex-col items-center justify-center gap-4 py-6 md:py-8 min-h-screen">
         <div className="inline-block max-w-lg text-center justify-center mb-8">
           <h1 className={title()}>Blog</h1>
         </div>
